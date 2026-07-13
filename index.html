@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | QR code component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 0.6875rem; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <!-- 第一层：视口容器（整个页面通常就这一个核心组件，可直接用 main） -->
+<main class="card-container">
+
+  <!-- 第二层：独立卡片主体（用 figure 表达这是一个独立的图文结合体） -->
+  <figure class="qr-card">
+    
+    <!-- 第三层（独立子节点）：核心视觉元素 -->
+    <img src="images/image-qr-code.png" alt="QR code to frontend-mentor.com" class="qr-image">
+
+    <!-- 第三层（独立子节点）：文本描述区域，用 figcaption 包裹更严谨 -->
+    <figcaption class="qr-content">
+      <h1 class="qr-title">Improve your front-end skills by building projects</h1>
+      <p class="qr-description">Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+    </figcaption>
+
+  </figure>
+
+</main>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+</body>
+</html>
