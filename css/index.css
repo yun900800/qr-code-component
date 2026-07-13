@@ -9,7 +9,7 @@
       --color-bg: #d5e1ef;          /* 浅淡蓝背景 */
       --color-card-bg: #ffffff;     /* 纯白卡片背景 */
       --color-text-main: #1f314f;   /* 深蓝主标题色 */
-      --color-text-sub: #7d889e;    /* 灰蓝副标题色 */
+      --color-text-sub: #68778d;    /* 灰蓝副标题色 (Slate 500: hsl(216, 15%, 48%)) */
       
       /* 全局常规字体 */
       font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif;
