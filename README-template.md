@@ -35,7 +35,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://qrcode-design6688.netlify.app/](https://qrcode-design6688.netlify.app/)
 
 ## My process
 
@@ -43,12 +43,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
@@ -59,56 +55,128 @@ Use this section to recap over some of your major learnings while working throug
 To see how you can add code snippets, see below:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<!-- 第一层：视口容器（整个页面通常就这一个核心组件，可直接用 main） -->
+<main class="card-container">
+
+  <!-- 第二层：独立卡片主体（用 figure 表达这是一个独立的图文结合体） -->
+  <figure class="qr-card">
+    
+    <!-- 第三层（独立子节点）：核心视觉元素 -->
+    <img src="images/image-qr-code.png" alt="QR code to frontend-mentor.com" class="qr-image">
+
+    <!-- 第三层（独立子节点）：文本描述区域，用 figcaption 包裹更严谨 -->
+    <figcaption class="qr-content">
+      <h1 class="qr-title">Improve your front-end skills by building projects</h1>
+      <p class="qr-description">Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+    </figcaption>
+
+  </figure>
+
+</main>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+    /* ==========================================================================
+       2. 视口容器层 - 完美居中魔法 (Grid Center)
+       ========================================================================== */
+    .card-container {
+      background-color: var(--color-bg);
+      min-height: 100vh;
+      
+      /* 使用 CSS Grid 一行流实现卡片在整个屏幕的绝对垂直水平居中 */
+      display: grid;
+      place-items: center;
+      
+      /* 手机端防贴边边距 */
+      padding: 24px; 
+    }
+
+    /* ==========================================================================
+       3. 卡片主体层 (3层深度极致扁平)
+       ========================================================================== */
+    .qr-card {
+      background-color: var(--color-card-bg);
+      
+      /* 响应式核心：大屏下最大宽度 320px，小屏下自动填满并靠容器 padding 缩放 */
+      width: 100%;
+      max-width: 320px; 
+      
+      /* 精确控制卡片内边距：上下左右完全一致的留白 */
+      padding: 16px;
+      
+      /* 圆润的大圆角与高级淡阴影 */
+      border-radius: 20px;
+      box-shadow: 0 25px 50px -12px rgba(131, 166, 210, 0.25);
+    }
+
+    /* 核心视觉元素（二维码图片） */
+    .qr-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      
+      /* 图片的圆角比外框略小，形成视觉内嵌嵌套感 */
+      border-radius: 10px; 
+    }
+
+    /* 描述性文本区域 */
+    .qr-content {
+      /* 利用容器的内边距和文本对齐，避免包裹多余的文本 div */
+      padding: 24px 12px 16px; 
+      text-align: center;
+    }
+
+    /* 主标题样式 */
+    .qr-title {
+      color: var(--color-text-main);
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    /* 副标题/描述样式 */
+    .qr-description {
+      color: var(--color-text-sub);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: 0.01em;
+    }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+In future Frontend Mentor challenges, I plan to build upon these foundations by focusing on:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- Handling more complex multi-column responsive layouts using advanced CSS Flexbox and Grid alignments.
+
+- Implementing strict BEM (Block Element Modifier) naming conventions to manage scaling stylesheets.
+
+- Diving into interactive JavaScript logic for component state management.
+
 
 ### Useful resources
 
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ### AI Collaboration
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
+I leveraged AI-assisted development practices to refine the engineering decisions behind this build:
 
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
+- Tools Used: Gemini
 
-**Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
+- Workflow Integration: Brainstormed semantic layout alternatives during the initial wireframing phase, which led to replacing generic div soup with a clean figure/figcaption hierarchy.
+
+- Key Takeaway: The assistant was highly effective for architectural code reviews and fine-tuning subtle design tokens, such as establishing a proper border-radius hierarchy between the inner image and the outer container.
+
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- GitHub - [@yun900800](https://github.com/yun900800/qr-code-component)
+- Frontend Mentor - [@yun900800](https://www.frontendmentor.io/profile/yun900800)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
-## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
